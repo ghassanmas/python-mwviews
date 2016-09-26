@@ -102,7 +102,7 @@ class PageviewsClient:
         if type(startDate) is not date:
             startDate = parse_date(start)
 
-        articles = [a.replace(' ', '_') for a in articles]
+        articles = [a.replace(' ', '_') for a in articles if type(a) is str]
         articlesSafe = [quote(a, safe='') for a in articles]
 
         urls = [
